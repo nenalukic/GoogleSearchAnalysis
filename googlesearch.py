@@ -8,3 +8,9 @@ data = trends.interest_by_region()
 data = data.sort_values(by="ChatGPT", ascending=False)
 data = data.head(10)
 print(data)
+
+data.reset_index().plot(x="geoName", 
+                        y="ChatGPT", 
+                        figsize=(15,12), kind="bar")
+plt.style.use('fivethirtyeight')
+plt.show()
